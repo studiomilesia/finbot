@@ -69,9 +69,11 @@ After setup, your config lives in `~/.finbot/config.json`. You can customize:
 
 ## Roadmap
 
-- [x] Telegram integration
-- [x] Expense logging and queries
-- [x] Subscription tracking
+- [ ] Telegram integration
+- [ ] Expense logging and queries
+- [ ] Subscription tracking
+- [ ] Weekly digest
+- [ ] CSV export
 - [ ] Receipt OCR
 - [ ] Discord integration
 - [ ] WhatsApp integration

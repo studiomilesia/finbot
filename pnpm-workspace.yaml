@@ -1,0 +1,6 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "packages/skills/*"
+  - "packages/adapters/*"
+  - "packages/storage/*"

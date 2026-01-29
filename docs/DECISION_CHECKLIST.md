@@ -9,14 +9,18 @@ Use this checklist to close all decision gaps before implementation. Each item s
 
 ---
 
-## 1) Timezone + Locale (FOUNDATIONAL)
+## 1) Timezone + Locale (FOUNDATIONAL) ✅
 
 These decisions cascade into parsing, queries, and scheduling. Resolve first.
 
-- [ ] Define timezone source of truth: message tz, user config tz, or server tz.
-- [ ] Define how timezone is determined on first use (prompt user? infer from locale?).
-- [ ] Define default locale values (currency, language) and when to prompt vs infer.
-- [ ] Define DST transition handling for scheduled jobs.
+- [x] Define timezone source of truth: message tz, user config tz, or server tz.
+  - **Decision:** User config (`locale.timezone`), defaulting to server's local timezone.
+- [x] Define how timezone is determined on first use (prompt user? infer from locale?).
+  - **Decision:** Wizard detects server tz and prompts for confirmation (Y/n). User can type alternative if needed.
+- [x] Define default locale values (currency, language) and when to prompt vs infer.
+  - **Decision:** Currency always prompted (no inference). Language hardcoded to `en` for v1, config field exists for future i18n.
+- [x] Define DST transition handling for scheduled jobs.
+  - **Decision:** Store all timestamps as UTC. Scheduler operates on UTC. Convert to user tz only for display.
 
 ---
 
